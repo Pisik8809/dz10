@@ -1,0 +1,74 @@
+body {
+  width: 97.5vw;
+  height: 97.5vh;
+  background-image: url(main.jpg);
+  background-size: auto;
+}
+
+.track {
+  width: 760px;
+  height: 240px;
+  background-image: url(дорожка.png);
+  position: relative;
+}
+
+.runner1, .runner2 {
+  display: inline-block;
+  width: 80px;
+  height: 84px;
+  position: absolute;
+}
+
+.runner1 {
+  background-image: url(бегун1-1.gif);
+  background-position: center;
+  top: 70px;
+  left: 1px;
+  z-index: 2;
+}
+
+.runner2 {
+  width: 57px;
+  background-image: url(toprunner.gif);
+  background-size: contain;
+  top: 0;
+  left: 20px;
+}
+
+.wrapper {
+  margin: 40px auto;
+}
+
+#question {
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  background: white;
+  margin: 10px auto;
+  border: 3px solid black;
+  width: 240px;
+  height: 40px;
+}
+
+.winner1, .winner2 {
+  margin: 0 auto;
+  width: 560px;
+  height: 180px;
+  background-color: red;
+  color: white;
+  font-size: 36px;
+  display: none;
+}
+
+input, label {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#result {
+  margin: 0 auto;
+  font-size: 16px;
+  background-color: white;
+  text-align: center;
+}
