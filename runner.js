@@ -36,8 +36,9 @@ answer1 = document.getElementById('number');
 function checkCurentName() {
   var userName = nameField.value;
   console.log(userName);
-  if(userName.length < 1) {
-    userName = 'Неизвестный Птеродактиль';
+  if(userName == '') {
+    userName = localStorage.name;
+    nameField.value = localStorage.name;
   }
   if (localStorage.name == userName) {
 	setUserCount();

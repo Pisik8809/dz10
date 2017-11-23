@@ -3,6 +3,7 @@ body {
   height: 97.5vh;
   background-image: url(main.jpg);
   background-size: auto;
+  text-align: center;
 }
 
 .track {
@@ -40,7 +41,6 @@ body {
 }
 
 #question {
-  text-align: center;
   line-height: 40px;
   display: block;
   background: white;
@@ -63,7 +63,6 @@ body {
 input, label {
   display: block;
   margin: 0 auto;
-  text-align: center;
 }
 
 #result, .forWin {
@@ -71,5 +70,10 @@ input, label {
   width: 400px;
   font-size: 16px;
   background-color: white;
-  text-align: center;
+}
+
+.descr {
+  background: white;
+  max-width: 760px;
+  margin: 0 auto;
 }
