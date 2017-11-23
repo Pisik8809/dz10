@@ -35,7 +35,10 @@ answer1 = document.getElementById('number');
 
 function checkCurentName() {
   var userName = nameField.value;
-  console.log(userName);
+  if(userName == '' && !localStorage.name) {
+    localStorage.setItem('name', 'Неизвестный умник');
+    document.getElementById('result').innerHTML = 'Играет ' + localStorage.name;
+  }
   if(userName == '') {
     userName = localStorage.name;
     nameField.value = localStorage.name;
@@ -43,11 +46,6 @@ function checkCurentName() {
   if (localStorage.name == userName) {
 	setUserCount();
 }
-else {
-  localStorage.setItem('name', userName);
-  console.log(localStorage.name);
-  document.getElementById('result').innerHTML = 'Первая игра пользователя ' + localStorage.name;
-  }
 }
 setTimeout(checkCurentName, 9000);
 
