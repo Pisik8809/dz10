@@ -25,6 +25,8 @@ arr = [
 //var userName = prompt('Введите ваше имя:');
 var targetCell = document.getElementById('question'),
 nameField = document.getElementById('name'),
+winNumber = document.getElementById('winCount'),
+loseNumber = document.getElementById('loseCount'),
 user1 = document.getElementsByClassName('runner1')[0],
 winner1 = document.getElementsByClassName('winner1')[0],
 winner2 = document.getElementsByClassName('winner2')[0],
@@ -34,16 +36,39 @@ answer1 = document.getElementById('number');
 function checkCurentName() {
   var userName = nameField.value;
   console.log(userName);
+  if(userName.length < 1) {
+    userName = 'Неизвестный Птеродактиль';
+  }
   if (localStorage.name == userName) {
 	setUserCount();
 }
 else {
-  localStorage.setItem("name", userName);
+  localStorage.setItem('name', userName);
   console.log(localStorage.name);
-  document.getElementById("result").innerHTML = 'первая игра пользователя ' + localStorage.name;
+  document.getElementById('result').innerHTML = 'Первая игра пользователя ' + localStorage.name;
   }
 }
 setTimeout(checkCurentName, 9000);
+
+function setWinNumber() {
+  if (localStorage.win) {
+	   localStorage.win = Number(localStorage.win) + 1;
+  }
+  else {
+    localStorage.setItem('win', '1');
+  }
+  winNumber.innerHTML = localStorage.win + ' раз';
+  }
+
+function setLoseNumber() {
+    if (localStorage.lose) {
+  	   localStorage.lose = Number(localStorage.lose) + 1;
+    }
+    else {
+      localStorage.setItem('lose', '1');
+    }
+    loseNumber.innerHTML = localStorage.lose + ' раз';
+}
 
 function checkUser() {
   var min = 0,
@@ -59,6 +84,7 @@ function checkUser() {
       answer1.value = '';
       if(user1.offsetLeft > 759) {
         winner1.style.display = 'block';
+        setWinNumber();
     setTimeout(function () {
       window.location.reload([false]);
   }, 2000);
@@ -81,7 +107,6 @@ var runner1 = document.getElementsByClassName('runner2')[0];
 
 function runnerComp1() {
   runner1.style.left = '760px';
-  //console.log(runner1.style.left);
 }
 
 setTimeout(runnerComp, 9000);
@@ -89,9 +114,9 @@ setTimeout(runnerComp, 9000);
 setTimeout(runnerComp1, 10000);
 
 function checkCoord() {
-  console.log(runner1.offsetLeft);
   if(runner1.offsetLeft > 703) {
     winner2.style.display = 'block';
+    setLoseNumber();
     setTimeout(function () {
       window.location.reload([false]);
     }, 2000);
@@ -104,9 +129,8 @@ function setUserCount() {
 	   localStorage.count = Number(localStorage.count) + 1;
   }
   else {
-    localStorage.setItem("count", '1');
+    localStorage.setItem('count', '1');
   }
-  document.getElementById("result").innerHTML = 'Количиство игр игрока ' + localStorage.name + ' ' + localStorage.count + ' раз';
-  console.log(localStorage.count);
+  document.getElementById('result').innerHTML = 'Количиство игр ' + localStorage.count + ' раз';
   }
 }

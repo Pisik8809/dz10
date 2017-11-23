@@ -66,8 +66,9 @@ input, label {
   text-align: center;
 }
 
-#result {
+#result, .forWin {
   margin: 0 auto;
+  width: 400px;
   font-size: 16px;
   background-color: white;
   text-align: center;
