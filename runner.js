@@ -57,7 +57,7 @@ function setWinNumber() {
   else {
     localStorage.setItem('win', '1');
   }
-  winNumber.innerHTML = localStorage.win + ' раз';
+  winNumber.innerHTML = ' ' + localStorage.win + ' раз';
   }
 
 function setLoseNumber() {
@@ -67,7 +67,7 @@ function setLoseNumber() {
     else {
       localStorage.setItem('lose', '1');
     }
-    loseNumber.innerHTML = localStorage.lose + ' раз';
+    loseNumber.innerHTML = ' ' + localStorage.lose + ' раз';
 }
 
 function checkUser() {
